@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="me.sample.hibernate.model.PartnerMapping" table="PARTNER_MAPPING">
+		<id name="partnerMappingId" type="java.lang.Long">
+			<meta attribute="use-in-tostring">true</meta>
+			<column name="ID" />
+			<generator class="increment" />
+		</id>
+		<property name="partnerId" type="java.lang.String">
+			<meta attribute="use-in-tostring">true</meta>
+			<column name="PARTNER_ID" />
+		</property>
+		<many-to-one name="customer" class="me.sample.hibernate.model.Customer"
+			column="CUSTOMER_ID" cascade="save-update">
+		</many-to-one>
+		<!-- <property name="customerId" type="java.lang.Long">
+			<meta attribute="use-in-tostring">true</meta>
+			<column name="CUSTOMER_ID" />
+		</property> -->
+		<property name="accountId" type="java.lang.String">
+			<meta attribute="use-in-tostring">true</meta>
+			<column name="ACCOUNT_ID" />
+		</property>
+		<property name="accountName" type="java.lang.String">
+			<meta attribute="use-in-tostring">true</meta>
+			<column name="ACCOUNT_NAME" />
+		</property>
+	</class>
+
+	<sql-query name="findByPartnerId">
+		<return alias="part" class="me.sample.hibernate.model.PartnerMapping" />
+		<![CDATA[select * from PARTHNER_MAPPING p where p.PARTNER_ID = :partnerId]]>
+	</sql-query>
+
+	<sql-query name="findByCustomerId">
+		<return alias="part" class="me.sample.hibernate.model.PartnerMapping" />
+		<![CDATA[select * from PARTNER_MAPPING p where p.CUSTOMER_ID = :customerId]]>
+	</sql-query>
+
+	<query name="findByPartnerAccountId">
+        <![CDATA[from PartnerMapping p where p.partnerId = :fullName and p.accountId = :accountId]]>
+	</query>
+</hibernate-mapping>

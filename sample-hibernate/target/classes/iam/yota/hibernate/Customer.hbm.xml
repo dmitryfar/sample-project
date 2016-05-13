@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="me.sample.hibernate.model.Customer" table="CUSTOMER" >
+		<id name="customerId" type="long">
+			<meta attribute="use-in-tostring">true</meta>
+			<column name="CUSTOMER_ID" />
+			<generator class="increment" />
+		</id>
+		<property name="fullName" type="java.lang.String">
+			<meta attribute="use-in-tostring">true</meta>
+			<column name="FULL_NAME" />
+		</property>
+		<property name="balance" type="double">
+			<meta attribute="use-in-tostring">true</meta>
+			<column name="BALANCE" />
+		</property>
+		<property name="status" column="STATUS">
+			<meta attribute="use-in-tostring">true</meta>
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">me.sample.hibernate.model.CustomerStatus</param>
+				<param name="useNamed">true</param>
+			</type>
+		</property>
+		<property name="login" type="java.lang.String">
+			<meta attribute="use-in-tostring">true</meta>
+			<column name="LOGIN" unique="true" />
+		</property>
+		<property name="passwordHash" type="java.lang.String">
+			<meta attribute="use-in-tostring">true</meta>
+			<column name="PASSWORD_HASH" length="255"/>
+		</property>
+	</class>
+
+	<sql-query name="findByLogin">
+		<return alias="cust" class="me.sample.hibernate.model.Customer" />
+		<![CDATA[select * from CUSTOMER c where c.LOGIN = :login]]>
+	</sql-query>
+
+	<query name="findByName">
+        <![CDATA[from Customer c where c.fullName like :fullName]]>
+    </query>
+</hibernate-mapping>

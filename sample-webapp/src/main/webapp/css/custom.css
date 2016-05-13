@@ -1,0 +1,49 @@
+body {
+	color: #565656;
+
+}
+
+/* TREE */
+.treeview .list-group-item {
+  cursor: auto !important;
+  padding: 3px 5px;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+span.field-name {
+	font-weight: bold;
+}
+span.field-index {
+  color: cornflowerblue;
+}
+span.field-value {
+	color: mediumorchid;
+}
+
+span.field-class {
+
+}
+
+span.field-class-generic {
+  color: rgba(51, 122, 183, 0.39);
+}
+
+span.field-class-generic:hover {
+  color: #337ab7;
+}
+
+span.field-count {
+  color: #0ED403;
+}
+
+span.editable {
+  cursor: pointer;
+  color: #0088cc;
+}
+
+li.current-tree-element {
+  background-color: #F5F5F5;
+}

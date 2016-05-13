@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+<!--     <display-name>FortunePortlet</display-name>
+
+    <description>Automated generated Application Wrapper</description>
+
+    <servlet>
+        <servlet-name>object-editor</servlet-name>
+        <display-name>object-editor Portlet</display-name>
+        <description>Generated Portlet Wrapper</description>
+        <servlet-class>org.apache.pluto.core.PortletServlet</servlet-class>
+
+        <init-param>
+            <param-name>portlet-class</param-name>
+            <param-value>me.objecteditor.object-editor</param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>portlet-guid</param-name>
+            <param-value>yourportlet.object-editor</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>object-editor</servlet-name>
+        <url-pattern>/object-editor/*</url-pattern>
+    </servlet-mapping>
+ -->
+</web-app>

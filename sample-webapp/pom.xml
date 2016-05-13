@@ -1,0 +1,160 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>me.sample</groupId>
+  <artifactId>sample-webapp</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1</version>
+  <name>Maven Portlet Archetype</name>
+  <url>http://maven.apache.org</url>
+  
+  <parent>
+		<groupId>me.sample</groupId>
+		<artifactId>sample-project</artifactId>
+		<relativePath>..</relativePath>
+		<version>0.0.1</version>
+	</parent>
+  
+  
+  <build>
+    <finalName>sample-webapp</finalName>
+  </build>
+  <dependencies>
+      <dependency>
+          <groupId>jstl</groupId>
+          <artifactId>jstl</artifactId>
+          <version>1.0.2</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${spring.framework.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+        <version>${spring.framework.version}</version>
+      </dependency>
+      <dependency>
+ <groupId>org.springframework</groupId>
+ <artifactId>spring-context</artifactId>
+ <version>${spring.framework.version}</version>
+</dependency>
+<dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jboss.spec.javax.transaction</groupId>
+                    <artifactId>jboss-transaction-api_1.2_spec</artifactId>
+                </exclusion>
+            </exclusions>
+            <version>4.3.11.Final</version>
+        </dependency>
+
+
+      <!-- Logging -->
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>jcl-over-slf4j</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+      </dependency>
+      <!--  -->
+
+      <dependency>
+        <groupId>org.codehaus.groovy</groupId>
+        <artifactId>groovy-all</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-lang3</artifactId>
+      </dependency>
+
+
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.datatype</groupId>
+        <artifactId>jackson-datatype-hibernate4</artifactId>
+        <version>2.7.3</version>
+      </dependency>
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>3.1.0</version>
+      </dependency>
+      <dependency>
+        <groupId>org.json</groupId>
+        <artifactId>json</artifactId>
+        <version>20160212</version>
+      </dependency>
+      <dependency>
+        <groupId>com.thoughtworks.xstream</groupId>
+        <artifactId>xstream</artifactId>
+        <version>1.4.7</version>
+      </dependency>
+      <dependency>
+        <groupId>org.reflections</groupId>
+        <artifactId>reflections</artifactId>
+        <version>0.9.10</version>
+      </dependency>
+      <dependency>
+        <groupId>io.dropwizard.metrics</groupId>
+        <artifactId>metrics-core</artifactId>
+        <version>3.1.2</version>
+      </dependency>
+
+<dependency>
+    <groupId>org.jboss.logging</groupId>
+    <artifactId>jboss-logging</artifactId>
+    <version>3.3.0.Final</version>
+</dependency>
+
+    <!-- tests -->
+
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpclient</artifactId>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.httpcomponents</groupId>
+        <artifactId>httpmime</artifactId>
+        <version>4.3.5</version>
+        <scope>test</scope>
+      </dependency>
+
+      <dependency>
+      	<groupId>me.sample</groupId>
+      	<artifactId>sample-hibernate</artifactId>
+      </dependency>
+  </dependencies>
+  <properties>
+    <spring.framework.version>4.2.4.RELEASE</spring.framework.version>
+    <slf4j.version>1.7.19</slf4j.version>
+    <jackson.version>2.6.0</jackson.version>
+  </properties>
+</project>
